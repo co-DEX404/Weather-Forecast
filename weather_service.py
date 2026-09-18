@@ -26,12 +26,12 @@ def geocode_location(location_name):
     if not results:
         return None, "No matched. Please check spelling."
 
-    philppine_matches = [r for r in results if r.get("country_code") == "PH"]
+    philippine_matches = [r for r in results if r.get("country_code") == "PH"]
 
-    if not philppine_matches:
+    if not philippine_matches:
         return None, "No Philippine location found with that name."
 
-    best_match = max(philppine_matches, key=lambda r: r.get("population", 0))
+    best_match = max(philippine_matches, key=lambda r: r.get("population", 0))
 
     latitude = best_match["latitude"]
     longitude = best_match["longitude"]
@@ -85,7 +85,7 @@ def generate_weather_report(latitude, longitude):
     report_text = (
         f"Weather report for the next 12 Hours\n\n"
         f"{'Lowest Temperature':<20}: {lowest_temp} at {lowest_temp_readable}\n"
-        f"{'Highest Temeprature':<20}: {highest_temp} at {highest_temp_readable}\n"
+        f"{'Highest Temperature':<20}: {highest_temp} at {highest_temp_readable}\n"
         f"{'Chances of Rain':<20}: {peak_rain}% chance around {peak_rain_readable}"
     )
 
