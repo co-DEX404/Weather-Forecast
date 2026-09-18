@@ -54,3 +54,10 @@ pip install requests
 ```bash
 python main.py
 ```
+
+### Option 2: Run the Executable
+
+1. Go to the Releases section of this repository.
+2. Download `Weather.Forecast.exe` from the latest release.
+3. Open the downloaded `.exe` file.
+4. Weather Forecast will launch automatically.
