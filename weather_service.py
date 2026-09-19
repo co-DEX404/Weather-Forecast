@@ -59,7 +59,7 @@ def generate_weather_report(latitude, longitude):
 
     except ValueError:
         logging.error(f"Could not find the matching time slot for '{current_hour_str}' in weather data.")
-        return
+        return None, "Could not find current weather data. Please try again."
 
     temps_next_12h = data['hourly']['temperature_2m'][start_index : start_index + 12]
     rain_next_12h = data['hourly']['precipitation_probability'][start_index : start_index + 12]

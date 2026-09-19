@@ -124,6 +124,10 @@ class WeatherApp:
             latitude, longitude = coordinates
             report, advice = generate_weather_report(latitude, longitude)
 
+            if advice is None:
+                self.window.after(0, self.show_error, report)
+                return
+
             self.window.after(0, self.show_result, report, advice)
 
         except requests.RequestException:
